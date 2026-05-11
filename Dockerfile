@@ -7,10 +7,11 @@ RUN apt-get update \
         ca-certificates \
         curl \
         git \
+        libxml2-dev \
         libsqlite3-dev \
         unzip \
         zip \
-    && docker-php-ext-install pdo pdo_sqlite \
+    && docker-php-ext-install dom pdo pdo_sqlite \
     && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && apt-get clean \
